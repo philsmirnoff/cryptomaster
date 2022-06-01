@@ -1,8 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import '../App.css'
 
 function CryptoQuiz() {
-
+  const [questionNumber, setQuestionNumber] = useState(1)
   const moneyPyramid = [
     {id:1, amount: "$ 100"},
     {id:2, amount: "$ 200"},
@@ -27,7 +28,7 @@ function CryptoQuiz() {
       <div className="pyramid">
         <ul className="moneyList">
           {moneyPyramid.map(money => (
-          <li className="moneyListItem">
+          <li className={questionNumber === money.id ? "moneyListItem active" : "moneyListItem"}>
           <span className="moneyListItemNumber">{money.id}</span>
           <span className="moneyListItemAmount">{money.amount}</span>
           </li>

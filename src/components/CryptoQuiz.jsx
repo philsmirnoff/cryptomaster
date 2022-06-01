@@ -24,7 +24,12 @@ function CryptoQuiz() {
 
   return (
     <div className="cryptoquiz">
-      <div className="main-container">main</div>
+      <div className="main-container">
+        <div className="top">
+        <div className="timer">30</div>
+        </div>
+        <div className="bottom">question and answers</div>
+      </div>
       <div className="pyramid">
         <ul className="moneyList">
           {moneyPyramid.map(money => (

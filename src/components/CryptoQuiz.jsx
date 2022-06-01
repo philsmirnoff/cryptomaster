@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Trivia from './Trivia'
 import '../App.css'
 
 function CryptoQuiz() {
@@ -28,7 +29,7 @@ function CryptoQuiz() {
         <div className="top">
         <div className="timer">30</div>
         </div>
-        <div className="bottom">question and answers</div>
+        <div className="bottom"><Trivia /></div>
       </div>
       <div className="pyramid">
         <ul className="moneyList">

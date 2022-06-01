@@ -8,7 +8,7 @@ function Trivia() {
         <div className="answer">Penny</div>
         <div className="answer">Dime</div>
         <div className="answer">Quarter</div>
-        <div className="answer">Cryptocurrency</div>
+        <div className="answer wrong">Cryptocurrency</div>
       </div>
     </div>
   )

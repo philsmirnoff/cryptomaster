@@ -6,7 +6,7 @@ import '../App.css'
 
 function CryptoQuiz() {
   const [questionNumber, setQuestionNumber] = useState(1);
-  const [timeOut, setTimeOut] = useState(false);
+  const [stop, setStop] = useState(false);
 
 
   const moneyPyramid = [
@@ -36,7 +36,7 @@ function CryptoQuiz() {
         <div className="bottom">
           <Trivia
           data={data}
-          setTimeOut={setTimeOut}
+          setStop={setStop}
           questionNumber={questionNumber}
           setQuestionNumber={setQuestionNumber}
           />

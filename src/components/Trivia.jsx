@@ -1,17 +1,22 @@
 import React from 'react'
-import { data } from '../cryptoQuizQuestions/data'
+import { useEffect } from 'react';
+import { useState } from 'react'
 
-function Trivia() {
+function Trivia({data, setTimeOut, questionNumber, setQuestionNumber}) {
+  const [question, setQuestion] = useState(null);
+
+  // fetching data from data.js
+  useEffect(() => {
+    setQuestion(data[questionNumber - 1])
+  }, [data, questionNumber]);
   return (
     <div className="trivia">
-      <div className="question">What's the bitcoin?</div>
+      <div className="question">{question?.question}</div>
       <div className="answers">
-        <div className="answer">Penny</div>
-        <div className="answer">Dime</div>
-        <div className="answer">Quarter</div>
-        <div className="answer wrong">Cryptocurrency</div>
+        {question?.answers.map((answer) => (
+         <div className="answer">{answer.text}</div>))}
+         </div>
       </div>
-    </div>
   )
 }
 

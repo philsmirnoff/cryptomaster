@@ -1,10 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import Trivia from './Trivia'
+import { data } from '../cryptoQuizQuestions/data'
 import '../App.css'
 
 function CryptoQuiz() {
-  const [questionNumber, setQuestionNumber] = useState(1)
+  const [questionNumber, setQuestionNumber] = useState(1);
+  const [timeOut, setTimeOut] = useState(false);
+
+
   const moneyPyramid = [
     {id:1, amount: "$ 100"},
     {id:2, amount: "$ 200"},
@@ -29,7 +33,14 @@ function CryptoQuiz() {
         <div className="top">
         <div className="timer">30</div>
         </div>
-        <div className="bottom"><Trivia /></div>
+        <div className="bottom">
+          <Trivia
+          data={data}
+          setTimeOut={setTimeOut}
+          questionNumber={questionNumber}
+          setQuestionNumber={setQuestionNumber}
+          />
+        </div>
       </div>
       <div className="pyramid">
         <ul className="moneyList">

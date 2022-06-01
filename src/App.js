@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import Cryptocurrencies from './components/Cryptocurrencies';
 import News from './components/News';
 import CryptoDetails from './components/CryptoDetails';
+import CryptoQuiz from './components/CryptoQuiz';
 import './App.css'
 
 
@@ -31,6 +32,9 @@ const App = () => {
               <Route exact path='/news'>
                 <News />
               </Route>
+              <Route exact path='/cryptoquiz'>
+                <CryptoQuiz />
+              </Route>
             </Switch>
           </div>
         </Layout>
@@ -41,8 +45,9 @@ const App = () => {
         </Typography.Title>
         <Space>
           <Link to='/'>Home</Link>
-          <Link to='/exchanges'>Exchanges</Link>
+          <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
           <Link to='/news'>News</Link>
+          <Link to='/cryptoquiz'>CryptoQuiz</Link>
         </Space>
       </div>
     </div>

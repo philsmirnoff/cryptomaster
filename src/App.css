@@ -376,3 +376,45 @@ width: 70%;
   padding: 20px;
   align-items: center;
 }
+
+
+/* cryptoquiz styling */
+
+.cryptoquiz {
+  height: 100vh;
+  display: flex;
+  color: white;
+  background: url("https://i.ytimg.com/vi/yQbJRGs0fy8/maxresdefault.jpg") center; }
+
+.main-container {
+  width: 75%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230), url("https://i.ytimg.com/vi/yQbJRGs0fy8/maxresdefault.jpg") center;
+  display: flex;
+  flex-direction: column; }
+
+  .pyramid {
+    width: 25%;
+    background-color: #020230;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+    .moneyList {
+      padding: 20px;
+      list-style: none;
+      width: 100%; }
+
+    .moneyListItem {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-radius: 5px; }
+
+    .moneyListItem.active {
+      background-color: teal; }
+
+    .moneyListItemNumber {
+      width: 30%;
+      font-size: 18px;
+      font-weight: 100; }
+

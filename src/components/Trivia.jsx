@@ -12,13 +12,27 @@ function Trivia({data, setStop, questionNumber, setQuestionNumber}) {
     setQuestion(data[questionNumber - 1])
   }, [data, questionNumber]);
 
+  const delay = (duration, callback) => {
+    setTimeout(() => {
+      callback();
+    }, duration);
+  }
+
   const handleClick = (a) => {
     setSelectedAnswer(a);
     setClassName("answer active");
-    setTimeout(() => {
-        setClassName(a.correct ? "answer correct" : "answer wrong");
-    }, 3000);
-  };
+    delay(2000, () =>
+        setClassName(a.correct ? "answer correct" : "answer wrong")
+        );
+   delay(4000, () => {
+     if (a.correct) {
+       setQuestionNumber((prev) => prev + 1);
+       setSelectedAnswer(null);
+     } else {
+       setStop(true);
+     }
+   })
+  }
 
   return (
     <div className="trivia">

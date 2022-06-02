@@ -3,10 +3,13 @@ import { useState } from 'react'
 import Trivia from './Trivia'
 import { data } from '../cryptoQuizQuestions/data'
 import '../App.css'
+import { useEffect } from 'react'
 
 function CryptoQuiz() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
+  const [earned, setEarned] = useState("$ 0");
+
 
 
   const moneyPyramid = [
@@ -27,20 +30,24 @@ function CryptoQuiz() {
     {id:15, amount: "$ 1000000"},
   ].reverse();
 
+  useEffect(() => {
+    questionNumber > 1 && setEarned(moneyPyramid.find(m => m.id === questionNumber -1).amount)}, [moneyPyramid, questionNumber]);
+
   return (
-    <div className="cryptoquiz">
+     <div className="cryptoquiz">
       <div className="main-container">
+        {stop ? (<h1 className="endText">You earned: {earned}!</h1>) : (
+     <>
         <div className="top">
-        <div className="timer">30</div>
-        </div>
-        <div className="bottom">
-          <Trivia
-          data={data}
-          setStop={setStop}
-          questionNumber={questionNumber}
-          setQuestionNumber={setQuestionNumber}
-          />
-        </div>
+            <div className="timer">30</div>
+          </div><div className="bottom">
+              <Trivia
+                data={data}
+                setStop={setStop}
+                questionNumber={questionNumber}
+                setQuestionNumber={setQuestionNumber} />
+            </div></>
+        )}
       </div>
       <div className="pyramid">
         <ul className="moneyList">

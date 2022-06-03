@@ -3,10 +3,12 @@ import { useState } from 'react';
 import Trivia from './Trivia';
 import { data } from '../cryptoQuizQuestions/data';
 import Timer from './Timer';
+import Start from './Start';
 import '../App.css';
 import { useEffect } from 'react';
 
 function CryptoQuiz() {
+  const [username, setUsername] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("$ 0");
@@ -36,7 +38,9 @@ function CryptoQuiz() {
 
   return (
      <div className="cryptoquiz">
-      <div className="main-container">
+       {username ? (
+         <>
+         <div className="main-container">
         {stop ? (<h1 className="endText">You earned: {earned}!</h1>) : (
      <>
         <div className="top">
@@ -63,7 +67,10 @@ function CryptoQuiz() {
           </li>
           ))}
         </ul>
-    </div>
+      </div>
+         </>
+       ) : <Start setUsername={setUsername}/>}
+
    </div>
   )
 }

@@ -2,7 +2,10 @@ import React from 'react'
 
 function Start() {
   return (
-    <div>Start</div>
+    <div className="start">
+      <input placeholder="enter your name" className="startInput" />
+      <button className="startButton">Start</button>
+    </div>
   )
 }
 

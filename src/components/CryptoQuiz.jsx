@@ -41,7 +41,7 @@ function CryptoQuiz() {
        {username ? (
          <>
          <div className="main-container">
-        {stop ? (<h1 className="endText">{username}, You earned: {earned}!</h1>) : (
+        {questionNumber > 15 || stop ? (<h1 className="endText">{username}, You earned: {earned}!</h1>) : (
      <>
         <div className="top">
             <div className="timer">

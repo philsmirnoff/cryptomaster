@@ -2,7 +2,7 @@
   --text-primary: #000;
   --bgPrimary: #fff;
   --bgSecondary: #F9F9F9;
-  --pink: #0071bd;
+  --blue: #0071bd;
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
 }
@@ -14,7 +14,7 @@
 }
 
 a:hover {
-  color: var(--pink) !important;
+  color: var(--blue) !important;
 }
 
 .app {
@@ -34,7 +34,11 @@ a:hover {
 }
 
 .routes {
-  padding: 20px;
+  padding: 10px;
+}
+
+.cryptoquiz .routes {
+  padding: 0px !important;
 }
 
 .nav-container {
@@ -408,14 +412,19 @@ a:hover {
 }
 
 
-/* cryptoquiz styling */
+/* ============= cryptoquiz styling =================*/
 
 .cryptoquiz {
   height: 100vh;
   display: flex;
   color: white;
   background: url("https://i.ytimg.com/vi/yQbJRGs0fy8/maxresdefault.jpg") center;
+  padding: 0px;
 }
+
+/* .app .cryptoquiz .routes {
+  padding: 0px
+} */
 
 .main-container {
   width: 75%;
@@ -644,4 +653,55 @@ a:hover {
 
 .startButton:hover {
   background-color: #0071bd;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .endText {
+    color: white;
+    font-size: 25px;
+  }
+
+  .question {
+    font-size: 15px;
+  }
+
+  .answer {
+    font-size: 10px;
+  }
+
+  .timer {
+    bottom: 50px;
+    left: 110px;
+  }
+
+  .moneyListItemNumber {
+    font-size: 0px;
+  }
+
+  .moneyListItemAmount {
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .top {
+    height: 35%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  li {
+    text-align: center;
+    justify-content: center;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  li {
+    font-size: 12px;
+  }
 }

@@ -586,3 +586,62 @@ a:hover {
   color: yellow;
   font-size: 50px;
 }
+
+.start {
+  width: 450px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 19px;
+}
+
+.start p {
+  border: solid yellow;
+  background: blue;
+}
+
+.start li {
+  margin: 3px;
+  list-style-type: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.startInput {
+  width: 50%;
+  height: 25px;
+  border: solid yellow;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.startButton {
+  width: 50%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+  background-color: mediumblue;
+  border: solid yellow;
+}
+
+.startButton:hover {
+  background-color: #0071bd;
+}

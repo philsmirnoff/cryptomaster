@@ -1,9 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
-import Trivia from './Trivia'
-import { data } from '../cryptoQuizQuestions/data'
-import '../App.css'
-import { useEffect } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import Trivia from './Trivia';
+import { data } from '../cryptoQuizQuestions/data';
+import Timer from './Timer';
+import '../App.css';
+import { useEffect } from 'react';
 
 function CryptoQuiz() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -39,14 +40,18 @@ function CryptoQuiz() {
         {stop ? (<h1 className="endText">You earned: {earned}!</h1>) : (
      <>
         <div className="top">
-            <div className="timer">30</div>
-          </div><div className="bottom">
+            <div className="timer">
+              <Timer/>
+              </div>
+          </div>
+          <div className="bottom">
               <Trivia
                 data={data}
                 setStop={setStop}
                 questionNumber={questionNumber}
                 setQuestionNumber={setQuestionNumber} />
-            </div></>
+            </div>
+        </>
         )}
       </div>
       <div className="pyramid">

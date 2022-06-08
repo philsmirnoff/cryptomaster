@@ -34,12 +34,12 @@ a:hover {
 }
 
 .routes {
-  padding: 10px;
+  padding: 0px;
 }
 
-.cryptoquiz .routes {
+/* .cryptoquiz .routes {
   padding: 0px !important;
-}
+} */
 
 .nav-container {
   position: fixed;
@@ -273,6 +273,7 @@ a:hover {
   background-color: var(--bgSecondary);
 }
 
+
 @media screen and (max-width:1000px) {
   .stats-container {
     flex-direction: column;
@@ -388,6 +389,7 @@ a:hover {
 
 .crypto-card-container {
   min-height: 65vh !important;
+  padding: 1.8em;
 }
 
 .crypto-card {
@@ -422,9 +424,7 @@ a:hover {
   padding: 0px;
 }
 
-/* .app .cryptoquiz .routes {
-  padding: 0px
-} */
+
 
 .main-container {
   width: 75%;
@@ -703,5 +703,130 @@ a:hover {
 @media screen and (max-width: 320px) {
   li {
     font-size: 12px;
+  }
+}
+
+
+
+/* < !--- UPDATES ---> */
+
+/*---------------------------------------------*/
+@media screen and (max-width: 1300px) {
+  .main {
+    /* margin-left: 50px; */
+    margin-left: 0px;
+  }
+
+  /* .nav-container{
+    width: 30vh;
+  } */
+}
+
+@media screen and (max-width: 1170px) {
+  .main {
+    /* margin-left: 50px; */
+    margin-left: 0px;
+  }
+
+  .nav-container {
+    width: 25vh;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    /* margin-left: 100px; */
+    margin-left: 0px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .coin-desc-link {
+    flex-direction: column;
+  }
+
+  .stats-container h2 {
+    margin-top: 0px;
+  }
+
+  .coin-detail-container {
+    margin: 30px;
+  }
+
+  .nav-container {
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    width: 25vh;
+    height: 100vh;
+    margin: 0px;
+    background-color: #001529;
+  }
+
+  .crypto-card {
+    min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .routes {
+    padding: 0px;
+  }
+
+  .navbar {
+    flex: 1;
+  }
+
+  .main {
+    flex: 1;
+    margin-top: 90px;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .nav-container {
+    height: 8vh;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--bgSecondary);
+  }
+
+  .menu-control-container {
+    display: block !important;
+  }
+
+  .ant-menu {
+    position: absolute;
+    right: 0px;
+  }
+
+  .home-title {
+    font-size: 1.4rem !important;
+  }
+
+  .show-more {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .coin-links {
+    padding: 0px;
+  }
+
+  .coin-detail-container {
+    margin: 0;
+  }
+
+  .heading {
+    margin-top: 20px;
   }
 }

@@ -286,6 +286,10 @@ a:hover {
   .stats-container h2 {
     margin-top: 0px;
   }
+
+  .coin-detail-container {
+    margin: 30px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -294,7 +298,7 @@ a:hover {
   }
 
   .coin-detail-container {
-    margin: 0;
+    margin: 30px;
   }
 }
 
@@ -823,7 +827,7 @@ a:hover {
   }
 
   .coin-detail-container {
-    margin: 0;
+    margin: 30px;
   }
 
   .heading {

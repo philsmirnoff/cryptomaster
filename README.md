@@ -26,3 +26,7 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 
 ![](https://user-images.githubusercontent.com/32605566/173990893-9a88002d-8c09-4251-a59e-e081983a254a.gif)
 
+### News
+#### Users can have the access to the general cryptocureency related news or choose the cryptocurrency they are particularly interested in to get the latest 12 news articles.
+![](https://user-images.githubusercontent.com/32605566/173992314-f9013245-47b1-463d-8e11-c456b07055d6.gif)
+

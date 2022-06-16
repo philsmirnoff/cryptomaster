@@ -33,4 +33,7 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 ### CryptoQuiz
 #### Users can check their knowledge of cryptocurrencies by playing CryptoQuiz game, inspired by the TV Show "Who Wants To Be A Millionaire?".
 ![](https://user-images.githubusercontent.com/32605566/173993781-998f4721-1d0e-4c8b-bf3b-9f1d476b63d8.gif)
+
+## Code Snippets
+
  

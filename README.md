@@ -21,3 +21,6 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 
 #### Users can have an access to the global crypto statistics such as Total Cryptocurrencies, Total Market Capitalization, Total Markets, Total Exchanges, Total 24h Volume as well as Top Ten Cryptocurrencies in the World and latest crypto related news articles.
 
+### Cryptocurrencies
+#### Users can pick one of the 100 available cryptocurrencies and choose the desired time frame to track the dynamics of its price history with Chart.js Users have access to the more detailed statistics, cryptocurrency description and supplemental sources. 
+

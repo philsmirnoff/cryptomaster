@@ -24,3 +24,5 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 ### Cryptocurrencies
 #### Users can pick one of the 100 available cryptocurrencies and choose the desired time frame to track the dynamics of its price history with Chart.js Users have access to the more detailed statistics, cryptocurrency description and supplemental sources. 
 
+![](https://user-images.githubusercontent.com/32605566/173990893-9a88002d-8c09-4251-a59e-e081983a254a.gif)
+

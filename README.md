@@ -78,4 +78,23 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   ```
 - Chart is represented by the values pushed into coinPrice and coinTimestamp arrays that we get from looping over data that we got from Coinranking API history end point.
 - Coinranking API keeps track of prices on cryptocurrencies. The history endpoint lists prices and their timestamp for the requested time period, useful for making a chart.
+
+```
+  const handleClick = (a) => {
+    setSelectedAnswer(a);
+    setClassName("answer active");
+    delay(2000, () =>
+        setClassName(a.correct ? "answer correct" : "answer wrong")
+        );
+   delay(4000, () => {
+     if (a.correct) {
+       setQuestionNumber((prev) => prev + 1);
+       setSelectedAnswer(null);
+     } else {
+       setStop(true);
+     }
+   })
+  }
+
+```
  

@@ -35,5 +35,47 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 ![](https://user-images.githubusercontent.com/32605566/173993781-998f4721-1d0e-4c8b-bf3b-9f1d476b63d8.gif)
 
 ## Code Snippets
+<!-- ![](https://github.com/philsmirnoff/cryptomaster/blob/061674c8f25b3f52c8ce6b77410f0d7914e80359/src/components/LineChart.jsx) -->
+```
+const LineChart = ({ coinHistory, currentPrice, coinName }) => {
+  const coinPrice = [];
+  const coinTimestamp = [];
+  const len = coinHistory?.data?.history?.length;
+  const yLen = coinHistory?.data?.history?.length;
 
+  for (let i = len-1; i > 0; i--) {
+    coinPrice.push(coinHistory?.data?.history[i].price);
+  }
+  for (let i = yLen-1; i > 0; i--) {
+    coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp*1000).toLocaleDateString("en-US"));
+  }
+
+
+  const data = {
+    labels: coinTimestamp,
+    datasets: [
+      {
+        label: 'Price In USD',
+        data: coinPrice,
+        fill: false,
+        backgroundColor: '#0071bd',
+        borderColor: '#0071bd',
+      },
+    ],
+  };
+
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  };
+  ```
+- Chart is represented by the values pushed into coinPrice and coinTimestamp arrays that we get from looping over data that we got from Coinranking API history end point.
+- Coinranking API keeps track of prices on cryptocurrencies. The history endpoint lists prices and their timestamp for the requested time period, useful for making a chart.
  

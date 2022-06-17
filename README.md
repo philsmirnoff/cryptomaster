@@ -97,4 +97,5 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   }
 
 ```
+- The above code responsible for correct and wrong answer logic. If the user clicks on any of four answers, it changes to permanent blue color ```(setClassName: "answer active");```. After 2 seconds, if the answer is correct it turns green ```(setClassName("answer correct")```and user is allowed to solve the next question ```setQuestionNumber((prev) => prev + 1);```. If the user clicks the wrong answer, the answer becomes red ```(setClassName("answer wrong")``` and game stops ```setStop(true);```
  

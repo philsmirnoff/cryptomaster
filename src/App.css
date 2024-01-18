@@ -26,8 +26,6 @@ a:hover {
 .navbar {
   flex: 0.2;
   background-color: rgb(0, 21, 41);
-  /* width: 350px; */
-  /* max-width: 300px; */
 }
 
 .main {
@@ -60,7 +58,6 @@ a:hover {
 }
 
 .logo {
-  /* margin: 0 0 0 15px; */
   margin-top: 15px;
   margin-left: 10px;
 }

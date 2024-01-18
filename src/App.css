@@ -805,7 +805,21 @@ a:hover {
   }
 
   .nav-container {
-    width: 30vh;
+    width: 15vh;
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+    }
   }
 }
 
@@ -834,10 +848,25 @@ a:hover {
     position: fixed;
     left: 0;
     margin: 10px;
-    width: 25vh;
+    width: 14vh;
     height: 100vh;
     margin: 0px;
     background-color: #001529;
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-right: 5px;
+        margin-left: -1px;
+      }
+    }
   }
 
   .crypto-card {
@@ -872,6 +901,20 @@ a:hover {
     width: 100%;
     z-index: 100;
     background-color: var(--bgSecondary);
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-left: 5px;
+      }
+    }
   }
 
   .menu-control-container {

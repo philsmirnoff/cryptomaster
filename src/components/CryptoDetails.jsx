@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
-import { Col, Row, Typography, Select } from 'antd';
+import { Col, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi';
@@ -51,6 +51,10 @@ const CryptoDetails = () => {
         {time.map((date) => <Option key={date}>{date}</Option>)}
       </Select>
       <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
+      <Col className="coin-desc">
+          <Title level={3} className="coin-details-heading">What is {cryptoDetails.name}?</Title>
+         <p>{HTMLReactParser(cryptoDetails.description)}</p>
+        </Col>
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
@@ -80,21 +84,6 @@ const CryptoDetails = () => {
               </Col>
               <Text className="stats">{value}</Text>
             </Col>
-          ))}
-        </Col>
-      </Col>
-      <Col className="coin-desc-link">
-        <Row className="coin-desc">
-          <Title level={3} className="coin-details-heading">What is {cryptoDetails.name}?</Title>
-          {HTMLReactParser(cryptoDetails.description)}
-        </Row>
-        <Col className="coin-links">
-          <Title level={3} className="coin-details-heading">{cryptoDetails.name} Links</Title>
-          {cryptoDetails.links?.map((link) => (
-            <Row className="coin-link" key={link.name}>
-              <Title level={5} className="link-name">{link.type}</Title>
-              <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
-            </Row>
           ))}
         </Col>
       </Col>

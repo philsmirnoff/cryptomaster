@@ -20,6 +20,7 @@ a:hover {
 .app {
   display: flex;
   overflow: hidden;
+
 }
 
 .navbar {
@@ -30,16 +31,11 @@ a:hover {
 .main {
   flex: 0.8;
   width: 100%;
-
 }
 
 .routes {
   padding: 0px;
 }
-
-/* .cryptoquiz .routes {
-  padding: 0px !important;
-} */
 
 .nav-container {
   position: fixed;
@@ -48,18 +44,22 @@ a:hover {
   height: 100vh;
   margin: 0px;
   background-color: rgb(0, 21, 41);
+  width: 280px;
 }
+
 
 .logo-container {
   background-color: #001529;
   display: flex;
-  padding: 20px;
+  padding-left: 15px;
+  padding-top: 5px;
   align-items: center;
   width: 100%;
 }
 
 .logo {
-  margin: 0 0 0 15px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .logo a {
@@ -83,9 +83,59 @@ a:hover {
   align-items: center;
 }
 
+@media screen and (max-width: 2000px) {
+  main {
+    margin-left: 50px;
+  }
+
+  .nav-container {
+    width: 345px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+
+  main {
+    margin-left: 50px;
+  }
+
+  .nav-container {
+    width: 315px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+
+  main {
+    margin-left: 50px;
+  }
+
+  .nav-container {
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    height: 100vh;
+    margin: 0px;
+    background-color: rgb(0, 21, 41);
+    width: 290px;
+  }
+}
+
+
 @media screen and (max-width:1300px) {
+
   .main {
     margin-left: 50px;
+  }
+
+  .nav-container {
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    height: 100vh;
+    margin: 0px;
+    background-color: rgb(0, 21, 41);
+    width: 280px;
   }
 }
 
@@ -96,8 +146,15 @@ a:hover {
 }
 
 @media screen and (max-width:1000px) {
-  .main {
-    margin-left: 100px;
+
+  .nav-container {
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    height: 100vh;
+    margin: 0px;
+    background-color: rgb(0, 21, 41);
+    width: 380px;
   }
 }
 
@@ -148,6 +205,20 @@ a:hover {
   margin: 30px;
 }
 
+.coin-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  margin-top: 20px;
+
+  p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+}
+
 .coin-heading-container {
   display: flex;
   justify-content: center;
@@ -172,7 +243,8 @@ a:hover {
 
 .stats-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  ;
   align-items: center;
   gap: 40px;
 }
@@ -375,7 +447,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .show-more {
@@ -715,31 +787,44 @@ a:hover {
 /* < !--- UPDATES ---> */
 
 /*---------------------------------------------*/
+
+
 @media screen and (max-width: 1300px) {
   .main {
-    /* margin-left: 50px; */
-    margin-left: 0px;
-  }
-
-  /* .nav-container{
-    width: 30vh;
-  } */
-}
-
-@media screen and (max-width: 1170px) {
-  .main {
-    /* margin-left: 50px; */
     margin-left: 0px;
   }
 
   .nav-container {
-    width: 25vh;
+    width: 30vh;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .main {
+    margin-left: 0px;
+  }
+
+  .nav-container {
+    width: 15vh;
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 1000px) {
   .main {
-    /* margin-left: 100px; */
     margin-left: 0px;
   }
 
@@ -763,10 +848,25 @@ a:hover {
     position: fixed;
     left: 0;
     margin: 10px;
-    width: 25vh;
+    width: 14vh;
     height: 100vh;
     margin: 0px;
     background-color: #001529;
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-right: 5px;
+        margin-left: -1px;
+      }
+    }
   }
 
   .crypto-card {
@@ -801,6 +901,20 @@ a:hover {
     width: 100%;
     z-index: 100;
     background-color: var(--bgSecondary);
+
+    .logo-container {
+      background-color: #001529;
+      display: flex;
+      padding-left: 10px;
+      padding-top: 5px;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-left: 5px;
+      }
+    }
   }
 
   .menu-control-container {

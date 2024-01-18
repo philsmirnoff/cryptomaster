@@ -31,11 +31,11 @@ const Homepage = () => {
         <Title level={3} className="show-more"><Link to="/cryptocurrencies">Show more</Link></Title>
       </div>
       <Cryptocurrencies simplified />
-      {/* <div className="home-heading-container" style={{ padding: "20px" }}>
+      <div className="home-heading-container" style={{ padding: "20px" }}>
         <Title level={2} className="home-title">Latest Crypto News</Title>
         <Title level={3}><Link to="/news">Show more</Link></Title>
       </div>
-      <News simplified /> */}
+      <News simplified />
     </>
   )
 }

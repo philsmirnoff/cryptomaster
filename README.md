@@ -13,7 +13,7 @@ CryptoMaster is an application for tracking cryptocurrency related data and late
 - Ant Design
 - CSS
 - Chart.js
-- Rapid Api (Coinranking API, Bing News Search API)
+- Rapid Api (Coinranking API) and NewsCatcher News Api ![](https://newscatcherapi.com/).
 
 ## Features
 

@@ -11,9 +11,11 @@ const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data } = useGetCryptosQuery(100);
   const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
+  console.log(cryptoNews)
 
-const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
-  if (!cryptoNews?.articles) return 'Loading...';
+  const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
+
+  if (!cryptoNews?.value) return 'Loading...';
 
   return (
     <Row gutter={[24, 24]} style={{ padding: '20px' }}>
@@ -36,23 +38,23 @@ const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=Ne
           </Select>
         </Col>
       )}
-      {cryptoNews.articles.map((news, i) => (
+      {cryptoNews.value.map((news, i) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
                 <Title className="news-title" level={4}>
-                  {news.title}
+                  {news.name}
                 </Title>
-                <img src={news.urlToImage || demoImage} alt="" style={{ width: '100px', height: '100px' }} />
+                <img src={news.image?.thumbnail?.contentUrl || demoImage} alt="" style={{ width: '100px', height: '100px' }} />
               </div>
               <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
               <div className="provider-container">
                 <div>
-                  <Avatar src={news.source?.urlToImage || demoImage}  alt="" />
-                  <Text className="provider-name">{news.source?.name}</Text>
+                  <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage}  alt="" />
+                  <Text className="provider-name">{news.provider[0]?.name}</Text>
                 </div>
-                <Text>{moment(news.publishedAt).startOf('ss').fromNow()}</Text>
+                <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
               </div>
             </a>
           </Card>

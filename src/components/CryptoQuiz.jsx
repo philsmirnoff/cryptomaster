@@ -37,6 +37,8 @@ function CryptoQuiz() {
     questionNumber > 1 && setEarned(moneyPyramid.find(m => m.id === questionNumber -1).amount)}, [moneyPyramid, questionNumber]);
 
   return (
+    <>
+    <div className="preload-bg"></div>
      <div className="cryptoquiz">
        {username ? (
          <>
@@ -70,8 +72,8 @@ function CryptoQuiz() {
       </div>
          </>
        ) : <Start setUsername={setUsername}/>}
-
-   </div>
+    </div>
+   </>
   )
 }
 

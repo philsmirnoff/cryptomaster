@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
-import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
-import moment from 'moment';
-import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
-import { useGetCryptosQuery } from '../services/cryptoApi';
+import React, { useState } from "react";
+import { Select, Typography, Row, Col, Avatar, Card } from "antd";
+import moment from "moment";
+import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
 
 const News = ({ simplified }) => {
-  const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
+  const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
   const { data } = useGetCryptosQuery(100);
-  const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
-  console.log(cryptoNews)
+  const { data: cryptoNews } = useGetCryptoNewsQuery({
+    newsCategory,
+    count: simplified ? 6 : 12,
+  });
 
-  const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
+  const demoImage =
+    "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
-  if (!cryptoNews?.value) return 'Loading...';
+if (!cryptoNews?.value) return <Loader />;
 
   return (
-    <Row gutter={[24, 24]} style={{ padding: '20px' }}>
+    <Row gutter={[24, 24]} style={{ padding: "20px" }}>
       {!simplified && (
         <Col span={24}>
           <Select
@@ -27,7 +31,9 @@ const News = ({ simplified }) => {
             placeholder="Select a Crypto"
             optionFilterProp="children"
             onChange={(value) => setNewsCategory(value)}
-            filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
           >
             <Option value="Cryptocurrency">Cryptocurrency</Option>
             {data?.data?.coins?.map((coin) => (
@@ -46,15 +52,33 @@ const News = ({ simplified }) => {
                 <Title className="news-title" level={4}>
                   {news.name}
                 </Title>
-                <img src={news.image?.thumbnail?.contentUrl || demoImage} alt="" style={{ width: '100px', height: '100px' }} />
+                <img
+                  src={news.image?.thumbnail?.contentUrl || demoImage}
+                  alt=""
+                  style={{ width: "100px", height: "100px" }}
+                />
               </div>
-              <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
+              <p>
+                {news.description.length > 100
+                  ? `${news.description.substring(0, 100)}...`
+                  : news.description}
+              </p>
               <div className="provider-container">
                 <div>
-                  <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage}  alt="" />
-                  <Text className="provider-name">{news.provider[0]?.name}</Text>
+                  <Avatar
+                    src={
+                      news.provider[0]?.image?.thumbnail?.contentUrl ||
+                      demoImage
+                    }
+                    alt=""
+                  />
+                  <Text className="provider-name">
+                    {news.provider[0]?.name}
+                  </Text>
                 </div>
-                <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+                <Text>
+                  {moment(news.datePublished).startOf("ss").fromNow()}
+                </Text>
               </div>
             </a>
           </Card>

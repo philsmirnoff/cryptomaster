@@ -36,16 +36,12 @@ const Homepage = () => {
       <div className="home-heading-container" style={{ padding: "20px" }}>
         <Title level={2} className="home-title">Latest Crypto News</Title>
         <Title level={3} className="show-more">
-          {showAllNews ? (
-            <Link to="/news">View All News</Link>
-          ) : (
-            <span 
-              onClick={() => setShowAllNews(true)} 
-              style={{ cursor: 'pointer', color: '#0071bd' }}
-            >
-              Show more
-            </span>
-          )}
+          <span 
+            onClick={() => setShowAllNews(!showAllNews)} 
+            style={{ cursor: 'pointer', color: '#0071bd' }}
+          >
+            {showAllNews ? 'Show less' : 'Show more'}
+          </span>
         </Title>
       </div>
       <News simplified showAllNews={showAllNews} />

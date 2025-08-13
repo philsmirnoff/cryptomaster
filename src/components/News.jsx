@@ -64,18 +64,19 @@ const News = ({ simplified, showAllNews = false }) => {
               const isLastRow = i >= totalItems - lastRowItems;
               const isLastItem = i === totalItems - 1;
               
-              // Center the last row items
+              // Center the last row items (only on large screens)
               let colProps = { xs: 24, sm: 12, lg: 8 };
               let colStyle = { display: 'flex' };
               
+              // Only apply centering on large screens (lg and above)
               if (isLastRow && lastRowItems === 1) {
-                // Single item in last row - center it
-                colProps = { xs: 24, sm: 12, lg: 8, offset: 8 };
+                // Single item in last row - center it (desktop only)
+                colProps = { xs: 24, sm: 12, lg: 8, lg: { span: 8, offset: 8 } };
               } else if (isLastRow && lastRowItems === 2) {
-                // Two items in last row - center them
+                // Two items in last row - center them (desktop only)
                 colProps = { xs: 24, sm: 12, lg: 8 };
                 if (i === totalItems - 2) {
-                  colProps.offset = 4; // First of two items
+                  colProps.lg = { span: 8, offset: 4 }; // First of two items
                 }
               }
               

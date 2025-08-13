@@ -37,6 +37,21 @@ const App = () => {
             </Switch>
           </div>
         </Layout>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            CryptoMaster <br />
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+            <Link to="/news">News</Link>
+            <Link to="/cryptoquiz">CryptoQuiz</Link>
+          </Space>
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const { Option } = Select;
 // Custom Image component with fallback
 const ImageWithFallback = ({ src, fallback, alt, style, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src || fallback);
-  
+
   const handleError = () => {
     if (imgSrc !== fallback) {
       setImgSrc(fallback);
@@ -33,7 +33,7 @@ const ImageWithFallback = ({ src, fallback, alt, style, ...props }) => {
 // Custom Avatar component with fallback
 const AvatarWithFallback = ({ src, fallback, alt, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src || fallback);
-  
+
   const handleError = () => {
     if (imgSrc !== fallback) {
       setImgSrc(fallback);
@@ -58,15 +58,7 @@ const News = ({ simplified }) => {
     newsCategory,
     count: simplified ? 6 : 12,
   });
-
-  const demoImage = "/coin.jpg"
-
-  // Debug logging
-  if (cryptoNews?.value) {
-    console.log('News data:', cryptoNews.value);
-    console.log('First news item image:', cryptoNews.value[0]?.image);
-    console.log('Demo image path:', demoImage);
-  }
+const demoImage = "/coin.jpg"
 
 
 if (!cryptoNews?.value) return <Loader />;
@@ -107,9 +99,9 @@ if (!cryptoNews?.value) return <Loader />;
                       </Title>
                       <ImageWithFallback
                         src={
-                          news.image?.thumbnail?.contentUrl || 
-                          news.image?.contentUrl || 
-                          news.image?.url || 
+                          news.image?.thumbnail?.contentUrl ||
+                          news.image?.contentUrl ||
+                          news.image?.url ||
                           demoImage
                         }
                         fallback={demoImage}

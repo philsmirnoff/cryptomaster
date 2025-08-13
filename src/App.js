@@ -7,11 +7,13 @@ import Cryptocurrencies from "./components/Cryptocurrencies";
 import News from "./components/News";
 import CryptoDetails from "./components/CryptoDetails";
 import CryptoQuiz from "./components/CryptoQuiz";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="app">
+      <ScrollToTop />
       <div className="navbar">
         <Navbar />
       </div>

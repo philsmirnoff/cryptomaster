@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import millify from 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,7 @@ const { Title } = Typography;
 
 
 const Homepage = () => {
+  const [showAllNews, setShowAllNews] = useState(false);
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
@@ -34,9 +35,20 @@ const Homepage = () => {
       <Cryptocurrencies simplified />
       <div className="home-heading-container" style={{ padding: "20px" }}>
         <Title level={2} className="home-title">Latest Crypto News</Title>
-        <Title level={3}><Link to="/news">Show more</Link></Title>
+        <Title level={3} className="show-more">
+          {showAllNews ? (
+            <Link to="/news">View All News</Link>
+          ) : (
+            <span 
+              onClick={() => setShowAllNews(true)} 
+              style={{ cursor: 'pointer', color: '#0071bd' }}
+            >
+              Show more
+            </span>
+          )}
+        </Title>
       </div>
-      <News simplified />
+      <News simplified showAllNews={showAllNews} />
     </>
   )
 }

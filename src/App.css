@@ -1046,3 +1046,21 @@ a:hover {
     margin-top: 20px;
   }
 }
+
+/* Show more news button styling */
+.show-more-news-btn {
+  background: #0071bd !important;
+  border-color: #0071bd !important;
+  border-radius: 8px !important;
+  padding: 8px 24px !important;
+  height: auto !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.show-more-news-btn:hover {
+  background: #005a9e !important;
+  border-color: #005a9e !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 113, 189, 0.3) !important;
+}

@@ -7,6 +7,14 @@
   --border: #d9d9d9;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,10 +25,19 @@ a:hover {
   color: var(--blue) !important;
 }
 
-.app {
+/* .app {
   display: flex;
   overflow: hidden;
 
+} */
+
+.app {
+  display: flex;
+  /* flex-direction: column; */
+  min-height: 100vh;
+  /* Use viewport height instead of 100% */
+  background-color: #f0f2f5;
+  /* Match your app's background color */
 }
 
 .navbar {
@@ -35,6 +52,76 @@ a:hover {
 
 .routes {
   padding: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* News component height styles */
+.news-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card {
+  min-height: 300px !important;
+  max-height: 400px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.news-card .ant-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-image-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  flex: 1;
+}
+
+.news-title {
+  width: 70%;
+}
+
+.news-image-container .img {
+  width: 100px;
+  height: 100px;
+}
+
+.news-card p {
+  color: black;
+  margin: 10px 0px !important;
+  flex: 1;
+}
+
+.provider-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
 .nav-container {
